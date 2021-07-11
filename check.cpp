@@ -102,7 +102,7 @@ int minimax(char A[3][3] , int valid[3][3] , bool flag , int moves)
             {
                 if(valid[i][j] == 0)
                 {
-                    A[i][j] = 'X';
+                    A[i][j] = 'O';
                     valid[i][j] = 1;
                     score = minimax(A , valid , true , moves+1);
                     A[i][j]= ' ';
@@ -126,7 +126,7 @@ int minimax(char A[3][3] , int valid[3][3] , bool flag , int moves)
             {
                 if(valid[i][j] == 0)
                 {
-                    A[i][j] = 'O';
+                    A[i][j] = 'X';
                     valid[i][j] = 1;
                     score = minimax(A , valid , false , moves+1);
                     A[i][j]= ' ';
@@ -154,7 +154,7 @@ void Bestmove(int *a , int *b , char A[3][3] , int valid[3][3] , int moves)
             {
                 A[i][j] = 'X';
                 valid[i][j] = 1;
-                score = minimax(A , valid , true , moves+1);
+                score = minimax(A , valid , false , moves+1);
                 A[i][j]= ' ';
                 valid[i][j] = 0;
                 if(bestscore < score)

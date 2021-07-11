@@ -4,6 +4,7 @@ using namespace std;
 
 int main()
 {
+    srand(time(NULL));
     cout<<"------ TIC TAC TOE ------"<<endl;
     cout<<"\nPress 1 start game (player vs player)\n";
     cout<<"\nPress 2 start game with computer\n";
@@ -22,7 +23,15 @@ int main()
             if(turn == 'X')
             {
                 int a , b;
-                Bestmove(&a , &b , A , valid , moves);
+                if(moves == 0)
+                {
+                    a = rand()%3;
+                    b = rand()%3;
+                }
+                else
+                {
+                    Bestmove(&a , &b , A , valid , moves);
+                }
                 A[a][b] = 'X';
                 valid[a][b] = 1;
                 turn = 'O';

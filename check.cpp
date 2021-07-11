@@ -90,7 +90,7 @@ int minimax(char A[3][3] , int valid[3][3] , bool flag , int moves)
     int result = check(A , moves);
     if(result == 1) return 1;
     if(result == -1) return -1;
-    if(result == 0) return 0;
+    if(result == 0 || result == 3) return 0;
 
     if(flag == false)
     {
